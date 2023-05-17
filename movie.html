@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Raya and The last Dragon</title>
+    <title >Details Page</title>
     <link rel="stylesheet" href="./movie-style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -43,7 +43,7 @@
         <img src="img/1.jpeg" alt="" id="img1" />
       </div>
       <div class="info">
-        <div class="movie-title">Raya and The Last Dragon</div>
+        <div class="movie-title" id="Title">Raya and The Last Dragon</div>
         <div class="movie-detail">
           <div class="set">
             <label>Release Date</label>
@@ -51,7 +51,7 @@
           </div>
           <div class="set">
             <label>Running time</label>
-            <span>1 Hr 47 Min</span>
+            <span id="runningTime">1 Hr 47 Min</span>
           </div>
           <div class="set">
             <label>Gener</label>
@@ -115,6 +115,24 @@
         imgElement.src = 'img/'+ value + '.jpeg';
         imgElement.alt = value;
 
+        const spanElement = document.getElementById('runningTime');
+
+        if (value === '2') {
+        spanElement.textContent = '1 Hr 30 Min';
+        } else if (value === '120') {
+        spanElement.textContent = '2 Hrs';
+        } else {
+        spanElement.textContent = '1 Hr 47 Min';
+        }
+        
+        const titleElement = document.getElementById('Title');
+        if (value === '2') {
+        titleElement.textContent = 'Hey';
+        } else if (value === '120') {
+        titleElement.textContent = '2 Hrs';
+        } else {
+        titleElement.textContent = 'Raya and The last Dragon';
+        }
         // go to home page
         function redirectToHomePage() {
         window.location.href = 'index.html';
