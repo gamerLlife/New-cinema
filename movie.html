@@ -7,37 +7,48 @@
     <link rel="stylesheet" href="./movie-style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <script src="/app.js"></script>
+    <script>
+      function goToBook(){
+        window.location.href="book.html";
+      }
+    </script>
   </head>
   <body>
     <div class="navbar">
-        <div class="navbar-container">
-            <div class="logo-container">
-                <h1 class="logo clickable" onclick="redirectToHomePage()">Queen's</h1>
-            </div>
-            <div class="menu-container">
-                <ul class="menu-list">
-                    <li class="menu-list-item active clickable">Home</li>
-                    <li class="menu-list-item clickable">Movies</li>
-                    <li class="menu-list-item clickable">Series</li>
-                </ul>
-            </div>
-            <div class="profile-container">
-                <img class="profile-picture" src="img/profile.jpg" alt="">
-                <div class="profile-text-container">
-                    <span class="profile-text">Profile</span>
-                    <i class="fas fa-caret-down"></i>
-                </div>
-                <div class="toggle">
-                    <i class="fas fa-moon toggle-icon"></i>
-                    <i class="fas fa-sun toggle-icon"></i>
-                    <div class="toggle-ball"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+      <div class="navbar-container">
+          <div class="logo-container">
+              <h1 class="logo clickable" onclick="redirectToHomePage()">Queen's</h1>
+          </div>
+          <div class="menu-container">
+              <ul class="menu-list">
+                  <!-- <li class="menu-list-item active clickable">Home</li>
+                  <li class="menu-list-item clickable">Movies</li>
+                  <li class="menu-list-item clickable">Series</li> -->
+
+              </ul>
+          </div>
+          <div class="profile-container">
+              <!-- <img class="profile-picture" src="img/profile.jpg" alt=""> -->
+              <!-- <div class="profile-text-container">
+                  <span class="profile-text">Profile</span>
+                  <i class="fas fa-caret-down"></i>
+              </div> -->
+              <button class="userbtn" onclick="goToLoginPage()">Login</button>
+              <span class="profile-text">/</span>
+              <button class="userbtn">Sign Up</button>
+              <div class="toggle">
+                  <i class="fas fa-moon toggle-icon"></i>
+                  <i class="fas fa-sun toggle-icon"></i>
+                  <div class="toggle-ball"></div>
+              </div>
+              
+          </div>
+      </div>
+  </div>
     <div class="container">
       <div class="poster">
         <img src="img/1.jpg" id="img1" />
@@ -94,15 +105,50 @@
             </div>
           </div>
         </div>
+        <button type="button" style="background-color: #4dbf00;
+          color: white;
+          padding: 10px 20px;
+          margin-top: 50px;
+          border-radius: 10px;
+          border: none;
+          outline: none;
+          font-weight: bold;" 
+          id="buyBTN" 
+          onclick="goToBook()">
+          Purchase
+        </button>
       </div>
     </div>
     <script>
+      //TOGGLE
+
+const ball = document.querySelector(".toggle-ball");
+const items = document.querySelectorAll(
+  ".container,.movie-list-title,.navbar-container,.sidebar,.left-menu-icon,.toggle,.userbtn, label, span, .header"
+);
+
+ball.addEventListener("click", () => {
+  items.forEach((item) => {
+    item.classList.toggle("active");
+  });
+  ball.classList.toggle("active");
+});
         // Get the value from the query parameter
         var query = new URLSearchParams(window.location.search);
         var value = query.get('value');
         updateCastDetails(value);
         // Use the value in Page 2
         console.log(value);
+        
+      var submitButton = document.getElementById("buyBTN");
+      
+      if (value === "8" || value === "9" || value === "10" || value === "11" || value === "12" || value === "13" || value === "14") {
+        submitButton.style.display = "none"; // Hide the submit button
+      } else {
+        submitButton.style.display = "block"; // Show the submit button
+      }
+
+        
 
         // Change the image source based on the value
         var imgElement = document.getElementById('img1');
@@ -129,6 +175,8 @@
         titleElement.textContent = 'The Ghost Station';
         } else if (value === '7') {
         titleElement.textContent = 'Evil Dead Rise';
+        } else if (value === '8') {
+        titleElement.textContent = 'Movie Up Coming';
         }
 
         const spanElement = document.getElementById('runningTime');
@@ -266,6 +314,20 @@
             case '7':
               document.getElementById('castImage1').src = 'img/g1.jpg';
               document.getElementById('castName1').textContent = 'Alyssa Sutherland';
+              document.getElementById('castImage2').src = 'img/g2.jpg';
+              document.getElementById('castName2').textContent = 'Lily Sullivan';
+              document.getElementById('castImage3').src = 'img/g3.jpg';
+              document.getElementById('castName3').textContent = 'Gabrielle Echols';
+              document.getElementById('castImage4').src = 'img/g4.jpg';
+              document.getElementById('castName4').textContent = 'Morgan Davies';
+              document.getElementById('castImage5').src = '-';
+              document.getElementById('castName5').textContent = '-';
+              document.getElementById('castImage6').src = '-';
+              document.getElementById('castName6').textContent = '-';
+              break;
+            case '8':
+              document.getElementById('castImage1').src = 'img/g1.jpg';
+              document.getElementById('castName1').textContent = 'This is movie 8 up coming';
               document.getElementById('castImage2').src = 'img/g2.jpg';
               document.getElementById('castName2').textContent = 'Lily Sullivan';
               document.getElementById('castImage3').src = 'img/g3.jpg';

@@ -30,7 +30,7 @@
 
 .logo {
   font-size: 30px;
-  color: #4dbf00;
+  color: #2dbf00;
 }
 
 .clickable {
@@ -71,6 +71,32 @@
   object-fit: cover;
 }
 
+.userbtn {
+  background-color: #000;
+  color: white;
+  padding: 7px 10px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 80px;
+  opacity: 0.9;
+}
+
+.userbtn.active {
+  background-color: #fff;
+  color: #000;
+  padding: 7px 10px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 80px;
+  opacity: 0.9;
+}
+
+.userbtn:hover {
+  opacity:1;
+}
+
 .toggle {
   width: 40px;
   height: 20px;
@@ -96,7 +122,6 @@
   cursor: pointer;
   transition: 1s ease all;
 }
-
 .container {
   
   display: grid;
@@ -217,4 +242,47 @@ position: absolute;
 left: 50px;
 opacity: 0;
 transition: 1s all ease-in-out;
+}
+
+.container.active {
+  background-color: white;
+}
+
+.movie-list-title.active {
+  color: black;
+}
+
+.navbar-container.active {
+  background-color: white;
+
+  color: black;
+}
+
+.sidebar.active{
+    background-color: white;
+}
+
+.left-menu-icon.active{
+    color: black;
+}
+
+.toggle.active{
+    background-color: black;
+}
+
+.toggle-ball.active{
+    background-color: white;
+    transform: translateX(-20px);
+}
+
+label.active{
+  color: black;
+}
+
+span.active{
+  color: black;
+}
+
+.header.active{
+  color: black;
 }

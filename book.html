@@ -6,8 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="book.css" />
     <title>Movie Seat Booking</title>
+    <script>
+      function redirectToHomePage(){
+        window.location.href="index.html";
+      }
+      function goToLoginPage() {
+        window.location.href = "login.html";
+      }
+    </script>
   </head>
   <body>
+    <div class="navbar">
+      <div class="navbar-container">
+          <div class="logo-container">
+              <h1 class="logo clickable" onclick="redirectToHomePage()">Queen's</h1>
+          </div>
+          <div class="menu-container">
+              <ul class="menu-list">
+                  <!-- <li class="menu-list-item active clickable">Home</li>
+                  <li class="menu-list-item clickable">Movies</li>
+                  <li class="menu-list-item clickable">Series</li> -->
+
+              </ul>
+          </div>
+          <div class="profile-container">
+              <!-- <img class="profile-picture" src="img/profile.jpg" alt=""> -->
+              <!-- <div class="profile-text-container">
+                  <span class="profile-text">Profile</span>
+                  <i class="fas fa-caret-down"></i>
+              </div> -->
+              <button class="userbtn" onclick="goToLoginPage()">Login</button>
+              <span class="profile-text">/</span>
+              <button class="userbtn">Sign Up</button>
+              <!-- <div class="toggle">
+                  <i class="fas fa-moon toggle-icon"></i>
+                  <i class="fas fa-sun toggle-icon"></i>
+                  <div class="toggle-ball"></div>
+              </div> -->
+              
+          </div>
+      </div>
+  </div>
+
     <div class="movie-container">
       <label>Pick a movie:</label>
       <select id="movie">
@@ -15,6 +55,16 @@
         <option value="12">Joker ($12)</option>
         <option value="8">Toy Story 4 ($8)</option>
         <option value="9">The Lion King ($9)</option>
+      </select>
+    </div>
+
+    <div class="movie-container">
+      <label>Pick a time:</label>
+      <select id="time">
+        <option value="1">01/01/2024 8AM</option>
+        <option value="2">01/01/2024 3AM</option>
+        <option value="3">02/01/2024 9PM</option>
+        <option value="4">02/01/2024 7PM</option>
       </select>
     </div>
 

@@ -24,7 +24,7 @@ arrows.forEach((arrow, i) => {
 
 const ball = document.querySelector(".toggle-ball");
 const items = document.querySelectorAll(
-  ".container,.movie-list-title,.navbar-container,.sidebar,.left-menu-icon,.toggle"
+  ".container,.movie-list-title,.navbar-container,.sidebar,.left-menu-icon,.toggle,.userbtn"
 );
 
 ball.addEventListener("click", () => {
@@ -45,3 +45,12 @@ function redirectToMoviePage(button) {
   // Redirect to Page 2 with the value as a query parameter
   window.location.href = "movie.html?value=" + encodeURIComponent(buttonValue);
 }
+
+function redirectToHomePage() {
+  window.location.href = "index.html";
+}
+
+function goToLoginPage() {
+  window.location.href = "login.html";
+}
+
